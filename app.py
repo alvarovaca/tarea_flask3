@@ -3,7 +3,7 @@ import json
 #import os
 app = Flask(__name__)
 
-with open("msx.json") as fichero:
+with open("MSX.json") as fichero:
     datos=json.load(fichero)
 
 @app.route('/',methods=["GET"])
