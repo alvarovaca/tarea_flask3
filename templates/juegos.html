@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Buscar juegos{% endblock %}
+{% block title %}Buscador{% endblock %}
 {% block content %}
     <section class="contact">
         <div class="container">
            <div class="row">
               <div class="col-md-12">
                  <div class="titlepage">
-                    <h2>Buscar juegos</h2>
+                    <h2>Buscador</h2>
                  </div>
               </div>
            </div>
@@ -15,10 +15,10 @@
                  <form id="request" class="main_form" action="/listajuegos" method="POST">
                     <div class="row">
                        <div class="col-md-12 ">
-                          <input class="contactus" placeholder="Nombre del juego" type="text" name="name"> 
+                          <input class="contactus" placeholder="Nombre del juego" type="text" name="name" autofocus> 
                        </div>
                        <div class="col-md-12">
-                          <button class="send_btn">Enviar</button>
+                          <button class="send_btn">Buscar</button>
                        </div>
                     </div>
                  </form>

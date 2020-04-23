@@ -18,14 +18,14 @@ def juegos():
 def listajuegos():
     nombre=request.form.get("name")
     for i in datos:
-        if str(i["nombre"]).startswith(nombre) or nombre=="":
+        if nombre == "" or str(i["nombre"]).startswith(nombre) :
             return render_template('listajuegos.html',juegos=datos,nombre=nombre)
     return render_template('listajuegos.html')
 
-@app.route('/juego/<int:identifier>',methods=["GET"])
-def juego(identifier):
+@app.route('/juego/<int:identificador>',methods=["GET"])
+def juego(identificador):
     for i in datos:
-        if i["id"] == identifier:
+        if i["id"] == identificador:
             return render_template('juego.html',juego=i)
     abort(404)
 

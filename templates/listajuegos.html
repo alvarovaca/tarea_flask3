@@ -16,7 +16,7 @@
                                 <th class="tg-hst0">Enlace</th>
                             </tr>
                         {% for i in juegos %}
-                            {% if (i.nombre|string).startswith(nombre) or nombre == "" %}
+                            {% if nombre == "" or (i.nombre|string).startswith(nombre) %}
                                 <tr>
                                     <th class="tg-rkfb">{{i.nombre}}</th>
                                     <th class="tg-rkfb">{{i.desarrollador}}</th>
