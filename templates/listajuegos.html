@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Lista juegos{% endblock %}
+{% block content %}
+    {% if coincidencia %}
+        <section class="about">
+            <div class="container">
+                <div class="row d_flex">
+                    <div class="col-md-5">
+                        <div class="titlepage">
+                            <h2>Coincidencias</h2>
+                        </div>
+                        <table class="tg">
+                            <tr>
+                                <th class="tg-hst0">Nombre</th>
+                                <th class="tg-hst0">Desarrollador</th>
+                                <th class="tg-hst0">Enlace</th>
+                            </tr>
+                        {% for i in juegos %}
+                            {% if str(i.nombre).startswith(nombre) or nombre == "" %}
+                                <tr>
+                                    <th class="tg-rkfb">{{i.nombre}}</th>
+                                    <th class="tg-rkfb">{{i.desarrollador}}</th>
+                                    <th class="tg-rkfb"><a href="/juego/{{i.id}}">Detalle</a></th>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+        <section class="about">
+            <div class="container">
+                <div class="row d_flex">
+                    <div class="col-md-5">
+                        <div class="titlepage">
+                            <h2>Sin coincidencias.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

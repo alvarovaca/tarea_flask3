@@ -14,6 +14,14 @@ def inicio():
 def juegos():
     return render_template("juegos.html")
 
+@app.route('/listajuegos',methods=["POST"])
+def listajuegos():
+    nombre=request.form.get("name")
+    for i in datos:
+        if str(i["nombre"]).startswith(nombre) or nombre=="":
+            return render_template('listajuegos.html',juegos=datos,nombre=nombre,coincidencia=True)
+    return render_template('listajuegos.html',juegos=datos,nombre=nombre,coincidencia=False)
+
 app.run(debug=True)
 #port=os.environ["PORT"]
 #app.run('0.0.0.0', int(port), debug=False)
