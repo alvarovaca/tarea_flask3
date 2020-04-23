@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{juego.nombre}}{% endblock %}
+{% block content %}
+    <section class="about">
+        <div class="container">
+            <div class="row d_flex">
+                <div class="col-md-5">
+                    <div class="titlepage">
+                        <h2>{{juego.nombre}}</h2>
+                    </div>
+                    <h3>Sistema: {{juego.sistema}}</h3>
+                    <h3>Distribuidor: {{juego.distribuidor}}</h3>
+                    <h3>Desarrollador: {{juego.desarrollador}}</h3>
+                    <h3>Categoría: {{juego.categoria}}</h3>
+                    <h3>Año: {{juego.año}}</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

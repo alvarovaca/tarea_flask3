@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, abort
 import json
 #import os
 app = Flask(__name__)
@@ -21,6 +21,13 @@ def listajuegos():
         if str(i["nombre"]).startswith(nombre) or nombre=="":
             return render_template('listajuegos.html',juegos=datos,nombre=nombre)
     return render_template('listajuegos.html')
+
+@app.route('/juego/<int:identifier>',methods=["GET"])
+def juego(identifier):
+    for i in datos:
+        if i["id"] == identifier:
+            return render_template('juego.html',juego=i)
+    abort(404)
 
 app.run(debug=True)
 #port=os.environ["PORT"]
