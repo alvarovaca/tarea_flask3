@@ -19,8 +19,8 @@ def listajuegos():
     nombre=request.form.get("name")
     for i in datos:
         if str(i["nombre"]).startswith(nombre) or nombre=="":
-            return render_template('listajuegos.html',juegos=datos,nombre=nombre,coincidencia=True)
-    return render_template('listajuegos.html',juegos=datos,nombre=nombre,coincidencia=False)
+            return render_template('listajuegos.html',juegos=datos,nombre=nombre)
+    return render_template('listajuegos.html')
 
 app.run(debug=True)
 #port=os.environ["PORT"]
