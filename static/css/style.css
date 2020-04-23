@@ -380,7 +380,7 @@ ul.btn li:last-child {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     background: url(../img/banner.jpg);
      background-repeat: no-repeat;
      min-height: 900px;
      background-size: 100% 100%;
@@ -821,7 +821,7 @@ ul.btn li:last-child {
 /** contact section **/
 
 .contact {
-     background: url(../images/contact_g.jpg);
+     background: url(../img/contact_g.jpg);
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 90px 0;
@@ -897,7 +897,7 @@ ul.btn li:last-child {
 /** footer **/
 
 .footer {
-     background: url(../images/footer.jpg);
+     background: url(../img/footer.jpg);
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding-top: 115px;
