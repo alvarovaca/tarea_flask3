@@ -17,6 +17,15 @@
                        <div class="col-md-12 ">
                           <input class="contactus" placeholder="Nombre del juego" type="text" name="name" value="{{nombre}}"> 
                        </div>
+                       <div class="col-md-12 ">
+                            <div id="blanco">
+                                Categoría: <select name="category">
+                                    {% for i in categorias %}
+                                      <option value="{{i}}">{{i}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                       </div>
                        <div class="col-md-12">
                           <button class="send_btn">Buscar</button>
                        </div>

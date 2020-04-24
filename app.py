@@ -12,14 +12,19 @@ def inicio():
 
 @app.route('/juegos',methods=["GET","POST"])
 def juegos():
+    categorias=[]
+    for i in datos:
+        if i["categoria"] not in categorias:
+            categorias.append(i["categoria"])
+    categorias.sort()
     if request.method=="GET":
-        return render_template("juegos.html")
+        return render_template("juegos.html",categorias=categorias)
     else:
         nombre=request.form.get("name")
         for i in datos:
             if nombre == "" or str(i["nombre"]).startswith(nombre):
-                return render_template('juegos.html',juegos=datos,nombre=nombre)
-        return render_template('juegos.html',nombre=nombre)
+                return render_template('juegos.html',juegos=datos,nombre=nombre,categorias=categorias)
+        return render_template('juegos.html',nombre=nombre,categorias=categorias)
 
 @app.route('/juego/<int:identificador>',methods=["GET"])
 def juego(identificador):
