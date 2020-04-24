@@ -13,6 +13,7 @@ def inicio():
 @app.route('/juegos',methods=["GET","POST"])
 def juegos():
     categorias=[]
+    categorias.append("")
     for i in datos:
         if i["categoria"] not in categorias:
             categorias.append(i["categoria"])
@@ -23,7 +24,7 @@ def juegos():
         nombre=request.form.get("name")
         categoria=request.form.get("category")
         for i in datos:
-            if (nombre == "" or str(i["nombre"]).startswith(nombre)) and categoria == i["categoria"]:
+            if (nombre == "" or str(i["nombre"]).startswith(nombre)) and (categoria == "" or categoria == i["categoria"]):
                 return render_template('juegos.html',juegos=datos,nombre=nombre,categoria=categoria,categorias=categorias)
         return render_template('juegos.html',nombre=nombre,categoria=categoria,categorias=categorias)
 

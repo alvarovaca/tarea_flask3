@@ -54,7 +54,7 @@
                                 <th class="tg-hst0">Enlace</th>
                             </tr>
                         {% for i in juegos %}
-                            {% if (nombre == "" or (i.nombre|string).startswith(nombre)) and i.categoria == categoria %}
+                            {% if (nombre == "" or (i.nombre|string).startswith(nombre)) and (categoria == "" or i.categoria == categoria) %}
                                 <tr>
                                     <th class="tg-rkfb">{{i.nombre}}</th>
                                     <th class="tg-rkfb">{{i.desarrollador}}</th>
