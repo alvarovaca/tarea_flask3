@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, abort
 import json
-#import os
+import os
 app = Flask(__name__)
 
 with open("MSX.json") as fichero:
@@ -35,6 +35,5 @@ def juego(identificador):
             return render_template('juego.html',juego=i)
     abort(404)
 
-app.run(debug=True)
-#port=os.environ["PORT"]
-#app.run('0.0.0.0', int(port), debug=False)
+port=os.environ["PORT"]
+app.run('0.0.0.0', int(port), debug=False)

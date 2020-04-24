@@ -1,6 +1,6 @@
 # Tarea Flask 3
 
-__Obligatorio__
+***Obligatorio***
 
 * **1:** La aplicación debe tener una hoja de estilo. Para ello lo mejor es que busques una plantilla HTML/CSS. ✔
 * **2:** Las plantillas que uses en la aplicación se heredarán de la plantilla base.html (esta plantilla la puedes crear a partir de la plantilla HTML que has buscado). ✔
@@ -13,7 +13,7 @@ __Obligatorio__
 * **9:** Como ves, estamos volviendo a hacer el patrón de diseño: Lista - detalle. La lista está en la página /listajuegos y el detalle está en la página /juego/<identificador>, donde aparecerán todos los datos del juego que tenga ese identificador. Si el identificador no existe, devolverá un 404. Tendrá un enlace que me devuelve a la página /juegos. ✔
 * **10:** La aplicación hay que desplegarla en Heroku. ✔
 
-__Mejoras__
+***Mejoras***
 
 * **1:** Realizar la búsqueda utilizando una sola ruta: es decir, que en la página /juegos esté el formulario de búsqueda y la lista de juegos seleccionada. La información del formulario se enviará a la misma página. No existirá la página /listajuegos. ✔
 * **2:** Como el protocolo HTTP no tiene estado, no es capaz de acordarse de los datos anteriores, por lo tanto cada vez que hagáis una búsqueda aparecerá la lista de juegos pero el formulario estará vacío, no recuerda lo que pusimos. Modifica el programa para que aparezca en el formulario la cadena que habías introducido en la búsqueda. ✔
