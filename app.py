@@ -13,13 +13,13 @@ def inicio():
 @app.route('/juegos',methods=["GET","POST"])
 def juegos():
     if request.method=="GET":
-        return render_template("juegos.html",metodo="GET")
+        return render_template("juegos.html")
     else:
         nombre=request.form.get("name")
         for i in datos:
             if nombre == "" or str(i["nombre"]).startswith(nombre):
                 return render_template('juegos.html',juegos=datos,nombre=nombre)
-        return render_template('juegos.html')
+        return render_template('juegos.html',nombre=nombre)
 
 @app.route('/juego/<int:identificador>',methods=["GET"])
 def juego(identificador):
