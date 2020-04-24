@@ -21,10 +21,11 @@ def juegos():
         return render_template("juegos.html",categorias=categorias)
     else:
         nombre=request.form.get("name")
+        categoria=request.form.get("category")
         for i in datos:
-            if nombre == "" or str(i["nombre"]).startswith(nombre):
-                return render_template('juegos.html',juegos=datos,nombre=nombre,categorias=categorias)
-        return render_template('juegos.html',nombre=nombre,categorias=categorias)
+            if (nombre == "" or str(i["nombre"]).startswith(nombre)) and categoria == i["categoria"]:
+                return render_template('juegos.html',juegos=datos,nombre=nombre,categoria=categoria,categorias=categorias)
+        return render_template('juegos.html',nombre=nombre,categoria=categoria,categorias=categorias)
 
 @app.route('/juego/<int:identificador>',methods=["GET"])
 def juego(identificador):

@@ -21,7 +21,11 @@
                             <div id="blanco">
                                 Categoría: <select name="category">
                                     {% for i in categorias %}
-                                      <option value="{{i}}">{{i}}</option>
+                                        {% if i == categoria %}
+                                            <option value="{{i}}" selected>{{i}}</option>
+                                        {% else %}
+                                            <option value="{{i}}">{{i}}</option>
+                                        {% endif %}
                                     {% endfor %}
                                 </select>
                             </div>
@@ -50,7 +54,7 @@
                                 <th class="tg-hst0">Enlace</th>
                             </tr>
                         {% for i in juegos %}
-                            {% if nombre == "" or (i.nombre|string).startswith(nombre) %}
+                            {% if (nombre == "" or (i.nombre|string).startswith(nombre)) and i.categoria == categoria %}
                                 <tr>
                                     <th class="tg-rkfb">{{i.nombre}}</th>
                                     <th class="tg-rkfb">{{i.desarrollador}}</th>
